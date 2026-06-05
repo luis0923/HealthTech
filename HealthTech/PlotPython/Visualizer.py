@@ -28,14 +28,14 @@ class save:
     def update(frame):
         ax.clear()
 
-        # Nós e arestas já visitados até o frame atual
+        
         visited_nodes = path[:frame + 1]
         visited_edges = path_edges[:frame]
 
-        # Cores dos nós
+        
         node_colors = ["red" if n in visited_nodes else "#cccccc" for n in G.nodes()]
 
-        # Cores das arestas
+       
         edge_colors = ["red" if e in visited_edges else "#eeeeee" for e in G.edges()]
 
         nx.draw(G, pos, ax=ax,
@@ -49,7 +49,7 @@ class save:
                 arrowsize=20,
                 connectionstyle="arc3,rad=0.1")
 
-        # Destaca o nó atual com borda
+        
         nx.draw_networkx_nodes(G, pos, ax=ax,
                             nodelist=[path[frame]],
                             node_color="orange",
@@ -68,7 +68,7 @@ class save:
         fig,
         update,
         frames=len(path),
-        interval=800,    # milissegundos entre cada passo
+        interval=800,    
         repeat=True
     )
 
